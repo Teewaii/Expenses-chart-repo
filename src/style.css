@@ -40,7 +40,8 @@ body{
 }
 
 .header, .chart{
-    max-width: 400px;
+    max-width: 330px;
+    box-shadow: 5px 3px 12px 5px rgba(0,0,0,0.1);
 }
 
 .header h2 {
@@ -119,3 +120,9 @@ hr{
     border: 1px solid rgba(128, 128, 128,.2);
 }
 
+@media (min-width:700px) {
+    .container{
+        /* border: 1px solid red; */
+        margin-top: 90px;
+    }
+}
