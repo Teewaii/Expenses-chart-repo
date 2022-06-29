@@ -1,4 +1,4 @@
-const monExp = document.querySelector('.balance-amount')
+const monExp = document.querySelector('.total-expenses')
 const ctx = document.getElementById('myChart');
 const myChart = new Chart(ctx, {
     type: 'bar',
