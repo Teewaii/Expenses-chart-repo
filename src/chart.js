@@ -1,43 +1,60 @@
-
+const monExp = document.querySelector('.balance-amount')
 const ctx = document.getElementById('myChart');
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
         datasets: [{
-            label: 'Expenses',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Expenses in Dollar($)',
+            data: [7, 19, 16, 22, 25, 14, 9],
             backgroundColor: [
-                'hsl(10, 79%, 65%)',
-                'hsl(10, 79%, 65%)',
-                'hsl(186, 34%, 60%)',
-                'hsl(10, 79 %, 65%)',
-                'hsl(10, 79 %, 65%)',
-                'hsl(10, 79 %, 65%)',
-                'hsl(10, 79 %, 65%)'
+                'rgb(236, 119, 95)',
+                'rgb(236, 119, 95)',
+                'rgb(118, 181, 188)',
+                'rgb(236, 119, 95)',
+                'rgb(118, 181, 188)',
+                'rgb(236, 119, 95)',
+                'rgb(236, 119, 95)'   
 
             ],
-            borderWidth: 1
+            borderWidth: 1,
+            borderRadius:[5]
         }]
     },
     options: {
-        scales: {
-            y: {
+        plugins: {
+            legend:{
+                display:false
+                }
+                
+            },
+             scales: {
+                x:{
+                    grid:{
+                        display:false,
+                        drawBorder:false
+                    }
+                },
+                y: {
                 ticks: {
-                    display: false
+                  display: false
                 },
-                grid: {
-                    display: false
+                  grid: {
+                    display: false,
+                    drawBorder:false
                 },
-                plugins: {
+                
                     tooltip: {
                         yAlign: "bottom",
                         displayColors: false,
-
-                    }
-                }
-            }
-        }
+                         },                   
+                    },
+                  
+     }
+        
     }
 
 });
+
+const arr = [7, 19, 16, 22, 25, 14, 9]
+ monExp.textContent ="$"+arr.reduce((a,b)=>a+b,0);
